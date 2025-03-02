@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Relief CBD | Premium CBD Products</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #1a1a1a;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #7cff80;
+            text-shadow: 0 0 5px rgba(124, 255, 128, 0.5);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #7cff80;
+            text-shadow: 0 0 5px rgba(124, 255, 128, 0.5);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(124, 255, 128, 0.2), rgba(0, 128, 0, 0.2));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #4CAF50, #7cff80);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(124, 255, 128, 0.3);
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #45a049, #6eeb72);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(124, 255, 128, 0.4);
+        }
+        
+        /* Products Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #4CAF50, #7cff80);
+            bottom: -10px;
+            left: 20%;
+        }
+        
+        .section-heading p {
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            border: 1px solid #333;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(124, 255, 128, 0.2);
+            border-color: #4CAF50;
+        }
+        
+        .product-img {
+            height: 240px;
+            background-color: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        
+        .product-info p {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #7cff80;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: #1a1a1a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 128, 0, 0.05), rgba(0, 0, 0, 0));
+            z-index: 1;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-img {
+            flex: 1;
+            height: 450px;
+            background-color: #2a2a2a;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #4CAF50, #7cff80);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+        
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: #1e1e1e;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #333;
+            height: 100%;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(124, 255, 128, 0.2);
+            border-color: #4CAF50;
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: linear-gradient(to right, #4CAF50, #7cff80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .benefit-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: #1a1a1a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 128, 0, 0.05), rgba(0, 0, 0, 0));
+            z-index: 1;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-card {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+            height: 100%;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(124, 255, 128, 0.1);
+            line-height: 1;
+            font-family: serif;
+        }
+        
+        .testimonial-content {
+            color: #b0b0b0;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #2a2a2a;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .author-info h4 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #7cff80;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111111;
+            color: #e0e0e0;
+            padding: 70px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #4CAF50, #7cff80);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #7cff80;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #7cff80;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: #7cff80;
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-bottom: 0;
+        }
+        
+        .social-links a:hover {
+            background-color: #4CAF50;
+            transform: translateY(-5px);
+            color: white;
+            box-shadow: 0 5px 15px rgba(124, 255, 128, 0.3);
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 30px;
+            border: 1px solid #333;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            outline: none;
+        }
+        
+        .newsletter-input:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(124, 255, 128, 0.3);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #2a2a2a;
+            color: #b0b0b0;
+        }
+        
+        .copyright a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .copyright a:hover {
+            color: #7cff80;
+        }
+        
+        /* Floating Particles Effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(124, 255, 128, 0.2);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Cart Styles */
+        .cart-wrapper {
+            position: relative;
+            margin-left: 20px;
+        }
+        
+        #cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 24px;
+            color: #e0e0e0;
+            transition: color 0.3s;
+        }
+        
+        #cart-icon:hover {
+            color: #7cff80;
+        }
+        
+        #cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #7cff80;
+            color: #111;
+            font-size: 12px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #cart-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 320px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 20px;
+            margin-top: 15px;
+            z-index: 1000;
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        #cart-dropdown.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #cart-dropdown h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        #cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+        
+        .cart-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .cart-item-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: #2a2a2a;
+        }
+        
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        
+        .cart-item-details h4 {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-details p {
+            color: #b0b0b0;
+            font-size: 0.8rem;
+            margin: 0;
+        }
+        
+        .cart-item-total {
+            color: #7cff80 !important;
+            font-weight: bold;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+        
+        .remove-item:hover {
+            color: #ff4f4f;
+            transform: scale(1.2);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            color: #666;
+            padding: 20px 0;
+        }
+        
+        .cart-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+        
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .cart-total-label {
+            color: #e0e0e0;
+        }
+        
+        #cart-total {
+            color: #7cff80;
+            font-size: 1.1rem;
+        }
+        
+        #checkout-button {
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Added to Cart Message */
+        .added-to-cart-message {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #1a1a1a;
+            border-left: 4px solid #7cff80;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transform: translateX(120%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .added-to-cart-message.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .added-to-cart-message p {
+            color: #e0e0e0;
+            margin: 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .benefit-card,
+            .testimonial-card {
+                padding: 25px 20px;
+            }
+            
+            #cart-dropdown {
+                width: 290px;
+                right: -100%;
+                left: -100%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Particles -->
+    <div class="particles">
+        <script>
+            // Create floating particles
+            function createParticles() {
+                const particles = document.querySelector('.particles');
+                const particleCount = 20;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random size
+                    const size = Math.random() * 15 + 5;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    
+                    // Random position
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    
+                    // Random opacity
+                    particle.style.opacity = Math.random() * 0.4;
+                    
+                    // Random animation delay
+                    particle.style.animationDelay = `${Math.random() * 15}s`;
+                    particle.style.animationDuration = `${Math.random() * 15 + 15}s`;
+                    
+                    particles.appendChild(particle);
+                }
+            }
+            
+            // Call function when DOM is loaded
+            document.addEventListener('DOMContentLoaded', createParticles);
+        </script>
+    </div>
+
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">Pure Relief CBD</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="cart-wrapper">
+                            <div id="cart-icon">🛒 <span id="cart-count">0</span></div>
+                            <div id="cart-dropdown">
+                                <h3>Your Cart</h3>
+                                <div id="cart-items">
+                                    <p class="empty-cart">Your cart is empty</p>
+                                </div>
+                                <div class="cart-footer">
+                                    <div class="cart-total-row">
+                                        <span class="cart-total-label">Total:</span>
+                                        <span id="cart-total">$0.00</span>
+                                    </div>
+                                    <a href="#" class="btn" id="checkout-button">Checkout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Experience Natural Wellness with Premium CBD</h1>
+                <p>Discover our curated collection of high-quality CBD products designed to enhance your wellbeing naturally and effectively.</p>
+                <a href="#products" class="btn">Explore Our Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Premium CBD Products</h2>
+                <p>Explore our selection of premium CBD products, all sourced from organic hemp and third-party tested for purity and potency.</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images\oil.png" alt="CBD Oil" />
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium CBD Oil</h3>
+                        <p>Our full-spectrum CBD oil tincture for daily wellness support. Available in multiple strengths and flavors.</p>
+                        <span class="price">$49.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images\gummie.png" alt="CBD Gummies" />
+                    </div>
+                    <div class="product-info">
+                        <h3>CBD Gummies</h3>
+                        <p>Delicious fruit-flavored gummies infused with CBD extract. Perfect for on-the-go wellness.</p>
+                        <span class="price">$29.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images\spray.png" alt="CBD Spray" />
+                    </div>
+                    <div class="product-info">
+                        <h3>CBD Oral Spray</h3>
+                        <p>Fast-acting CBD spray for on-the-go relief. Convenient and discreet with rapid absorption.</p>
+                        <span class="price">$34.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images\Gel.png" alt="CBD Gel" />
+                    </div>
+                    <div class="product-info">
+                        <h3>CBD Topical Gel</h3>
+                        <p>Soothing CBD gel for targeted application on sore muscles. Fast-absorbing formula with cooling sensation.</p>
+                        <span class="price">$39.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images\inhaler.png" alt="CBD Inhaler" />
+                    </div>
+                    <div class="product-info">
+                        <h3>CBD Inhaler</h3>
+                        <p>Innovative CBD delivery system for fast respiratory relief. Precise dosing with each inhalation.</p>
+                        <span class="price">$54.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images\product.webp" alt="About Our CBD" />
+                </div>
+                <div class="about-text">
+                    <h2>Our Commitment to Quality</h2>
+                    <p>At Pure Relief CBD, we believe in the power of nature to enhance wellbeing. Our journey began with a simple mission: to provide the highest quality CBD products that help people live better, naturally.</p>
+                    <p>All our products are made from organically grown hemp, extracted using CO2 methods to ensure purity, and third-party tested for potency and safety. We maintain full transparency with our customers by providing certificates of analysis for all products.</p>
+                    <p>From seed to shelf, we control every aspect of production to ensure you receive only the best CBD products on the market. Our team consists of experts in botany, chemistry, and wellness who are passionate about bringing the benefits of CBD to everyone.</p>
+                    <a href="#" class="btn">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Benefits Section -->
+     <section class="section" id="benefits">
+        <div class="container">
+            <div class="section-heading">
+                <h2>The Benefits of CBD</h2>
+                <p>CBD works with your body's endocannabinoid system, which helps regulate various physiological functions.</p>
+            </div>
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>Natural Wellness</h3>
+                    <p>Our CBD products offer a natural approach to supporting overall wellbeing and balance in your daily life, without artificial additives or harsh chemicals.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">😌</div>
+                    <h3>Calm & Relaxation</h3>
+                    <p>Many users report that CBD helps them maintain a sense of calm during stressful situations, promoting a more balanced emotional state.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">💤</div>
+                    <h3>Sleep Support</h3>
+                    <p>CBD may help support healthy sleep patterns and improve sleep quality, helping you wake up feeling refreshed and rejuvenated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Customer Experiences</h2>
+                <p>Hear what our customers have to say about their journey with Pure Relief CBD products.</p>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The CBD oil from Pure Relief has become an essential part of my daily routine. I've noticed significant improvements in my overall sense of wellbeing and ability to stay focused throughout the day.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="/api/placeholder/50/50" alt="Jennifer" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Jennifer M.</h4>
+                            <p>Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>I was skeptical at first, but after trying the CBD topical gel for my sore muscles after workouts, I'm completely convinced. It provides fast relief and has a pleasant subtle scent.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="/api/placeholder/50/50" alt="Michael" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael T.</h4>
+                            <p>Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The quality of Pure Relief's CBD gummies is exceptional. They taste great and have become my go-to for managing everyday stress. Their customer service is also outstanding.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="/api/placeholder/50/50" alt="Sarah" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah L.</h4>
+                            <p>Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Pure Relief CBD</h3>
+                    <p>Your trusted source for premium CBD products that enhance natural wellness and improve quality of life.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+    
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#products">Shop</a>
+                    <a href="#about">About Us</a>
+                    <a href="#benefits">CBD Benefits</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#">Lab Results</a>
+                    <a href="#">FAQ</a>
+                </div>
+    
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Gokul Nagaraju</p>
+                    <p>123 CBD Street, Wellness City</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Email: info@purereliefcbd.com</p>
+                    <p>Hours: Mon-Fri, 9 AM - 6 PM</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <style>
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer-column {
+            flex: 1;
+        }
+    </style>
+    
+    <script src="script.js"></script>
+    </body>
+    </html>
+    
